@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: Browser starts executing js code that creates the new note, adds to notes arr, call redraw func that renders notes.
+    Note right of browser: Then browser calls sendToServer func that sends new note as JSON data to the server.
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: 201 created
+    deactivate server
