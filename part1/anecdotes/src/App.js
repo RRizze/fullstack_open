@@ -48,8 +48,10 @@ const App = () => {
     setVotes(newVotes);
 
     // update max vote
-    const maxIndex = getMaxIndex(newVotes);
-    setMaxVoteIdx(maxIndex);
+    if (newVotes[selected] > newVotes[maxVoteIdx]) {
+      const maxIndex = getMaxIndex(newVotes);
+      setMaxVoteIdx(maxIndex);
+    }
   };
 
   return (
